@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather_App.Views.CityInformationPage" Title="Your City Info">
+    <ContentPage.Content>
+        <StackLayout>
+
+          
+            <WebView  x:Name="InfoView" Source="{Binding URI}" WidthRequest="200" HeightRequest="800" IsVisible="{Binding WebViewVisible}" Margin="0,0,0,0" Navigating="InfoView_Navigating" Navigated="InfoView_Navigated"></WebView>
+            <ActivityIndicator IsRunning="{Binding isLoading}" IsVisible="{Binding isLoading}"></ActivityIndicator>
+            <Label Text="{Binding ErrorText}" IsVisible="{Binding ErrorVisible}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

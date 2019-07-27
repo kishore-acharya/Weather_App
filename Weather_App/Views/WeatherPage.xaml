@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Weather_App.ViewModels"
+             x:Class="Weather_App.Views.WeatherPage">
+    <ContentPage.BindingContext>
+        viewmodels:WeatherPageViewModel
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Frame Padding="10" BorderColor="DarkGray" Margin="5" CornerRadius="20" BackgroundColor="LightSteelBlue">
+           
+            <StackLayout VerticalOptions="Start">
+                <StackLayout.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Down" Command="{Binding RefreshCommand}"></SwipeGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+                <Label Text="The Weather APP" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Snow" Font="Bold,20" Margin="5"/>
+                <Label Text="{Binding area}" Font="Bold"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <BoxView Color="#127ac7" HorizontalOptions="Fill" HeightRequest="10" BackgroundColor="#127ac7"></BoxView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                 
+                    <Label Text="Temperature:" HorizontalOptions="Start" Grid.Row="0" TextColor="White" Font="Bold"/>
+                    <Label Text="{Binding temperature}" HorizontalOptions="End" Grid.Row="0" />
+                    <Label Text="Min Temperature:" HorizontalOptions="Start" Grid.Row="1" TextColor="White" Font="Bold"/>
+                    <Label Text="{Binding min_temperature}" HorizontalOptions="End" Grid.Row="1" VerticalOptions="Start"/>
+                    <Label Text="Max Temperature:" HorizontalOptions="Start" Grid.Row="2" TextColor="White" Font="Bold"/>
+                    <Label Text="{Binding max_temperature}" HorizontalOptions="End" Grid.Row="2" VerticalOptions="Start"/>
+                    <Label Text="{Binding Description}" HorizontalOptions="CenterAndExpand" Grid.Row="3"  Font="Bold"/>
+                    <!--<Image Source="{Binding IconURL}" Grid.Row="4" Scale="4" Margin="5"></Image>-->
+                    <Image Source="{Binding IconURL}" Grid.Row="4" Scale="4" Margin="5" HeightRequest="40" WidthRequest="40"></Image>
+
+
+                </Grid>
+                <StackLayout>
+                    <Entry Text="{Binding query,Mode=TwoWay}" Placeholder="Enter a location"></Entry>
+                    <Button CornerRadius="5" Command="{Binding SetLocationCommand}" Text="Weather" BackgroundColor="#00a2ed" TextColor="White"></Button>
+                </StackLayout>
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#00a2ed"></ActivityIndicator>
+                <Button CornerRadius="5" Command="{Binding NavigateToInfo}"  Text="Info" BackgroundColor="#00a2ea" TextColor="White" ></Button>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
