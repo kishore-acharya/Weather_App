@@ -11,6 +11,6 @@ A weather Application for Android.Shows the weather information of current user 
   <LI>Libraries:Newtonsoft Json</LI>
 <LI>API:openweathermaps (For weather information and weather icon lookback) , locationq (For reverse Geocoding)</LI>
   </UL><BR>
-  <B> What was the Objective?</b>
+  <B> What was the Objective?</b><br>
   To familarize my self with the core concepts of json parsing, geocoding and reverse geocoding and async requests handling.
  
