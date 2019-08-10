@@ -10,4 +10,7 @@ A weather Application for Android.Shows the weather information of current user 
   <LI>Framework:Xamarin.forms, Xamarin.Android</LI>
   <LI>Libraries:Newtonsoft Json</LI>
 <LI>API:openweathermaps (For weather information and weather icon lookback) , locationq (For reverse Geocoding)</LI>
-  </UL>
+  </UL><BR>
+  <B> What was the Objective?</b>
+  To familarize my self with the core concepts of json parsing, geocoding and reverse geocoding and async requests handling.
+ 
