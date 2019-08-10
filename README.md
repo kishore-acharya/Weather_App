@@ -1,10 +1,10 @@
 # Weather_App
 Weather Application built using Xamarin
 
-<B>What is it?<B>
+<B>What is it?</B>
 A weather Application for Android.Shows the weather information of current user location.User also has the ability to check weather for any other location by simply giving the area name.
 
-<B>How its made?<B>
+<B>How its made?</B>
 Language: c#
 Framework:Xamarin.forms, Xamarin.Android
 Libraries:Newtonsoft Json
